@@ -1,7 +1,6 @@
 const { EventEmitter } = require("node:events");
 
 const event = new EventEmitter();
-console.log(event.emit("test"));
 
 const testAddListener = (fn) => {
   event.addListener("event1", fn);

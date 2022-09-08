@@ -31,7 +31,9 @@ class EventEmitter {
     const index = (this.listeners[eventName] || []).indexOf(listener);
     if (index !== -1) {
       this.listeners[eventName].splice(index, 1);
-      this.emit("removeListener");
+      if (eventName !== "removeListener") {
+        this.emit("removeListener");
+      }
     }
     return this;
   }
